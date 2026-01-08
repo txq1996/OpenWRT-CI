@@ -111,3 +111,5 @@ CONFIG_PACKAGE_lrzsz=y
 CONFIG_PACKAGE_zip=y
 CONFIG_PACKAGE_unzip=y
 CONFIG_PACKAGE_zlib=y
+
+luci-app-cpufreq
