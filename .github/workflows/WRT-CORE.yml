@@ -144,6 +144,12 @@ jobs:
             echo "caches cleanup done!"
           fi
 
+      - name: Add Custom Files
+        run: |
+          cp -r $GITHUB_WORKSPACE/root ./wrt/files/
+          find ./wrt/files/
+
+
       - name: Update Feeds
         run: |
           cd ./wrt/
