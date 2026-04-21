@@ -1,0 +1,9 @@
+#!/bin/sh
+
+uci set upnpd.config.enabled=1
+uci set upnpd.config.download=2048
+uci set upnpd.config.upload=2048
+uci set upnpd.config.presentation_url=http://192.168.2.1
+
+
+uci commit upnpd
