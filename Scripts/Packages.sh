@@ -123,13 +123,7 @@ UPDATE_VERSION() {
 UPDATE_VERSION "sing-box"
 #UPDATE_VERSION "tailscale"
 
-<<<<<<< HEAD
-
-
-UPDATE_PACKAGE "lucky" "gdy666/luci-app-lucky" "main"
-=======
 #引入私有扩展脚本
 if [ -f "$GITHUB_WORKSPACE/Scripts/PRIVATE.sh" ]; then
 	source "$GITHUB_WORKSPACE/Scripts/PRIVATE.sh"
 fi
->>>>>>> a1160b4e0cbf9206a2e504d9b418a074a9d3419d
