@@ -67,3 +67,6 @@ CONFIG_PACKAGE_lxc-lib=y
 CONFIG_PACKAGE_lxc-templates=y
 CONFIG_PACKAGE_lxc-destroy=y
 CONFIG_PACKAGE_lxc-info=y
+CONFIG_PACKAGE_lxc-auto=y
+CONFIG_PACKAGE_lxc-autostart=y
+CONFIG_PACKAGE_lxc-top=y
