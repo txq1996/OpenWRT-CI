@@ -117,4 +117,5 @@ CONFIG_PACKAGE_cgroupfs-mount=y
 CONFIG_PACKAGE_kmod-namespaces=y
 CONFIG_PACKAGE_less=y
 CONFIG_PACKAGE_diffutils=y
+CONFIG_PACKAGE_aria2=y
 
