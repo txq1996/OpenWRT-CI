@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2026 VIKINGYFY
 
+FEEDS_PATH="./feeds"
 PACKAGE_PATH="./package"
 
 #修补命令统一入口：FIX <名称> <守卫目录> <命令...>
@@ -30,6 +31,13 @@ FIX "theme-argon" "$PACKAGE_PATH/luci-theme-argon" sed -i \
 FIX "theme-aurora" "$PACKAGE_PATH/luci-app-aurora-config" find \
 	"$PACKAGE_PATH/luci-app-aurora-config/root/usr/share/aurora/" -type f -name '*.template' -exec sed -i \
 	"s/nav_type '.*'/nav_type 'dropdown'/g; s/struct_radius_base '.*'/struct_radius_base '0.125rem'/g" {} +
+
+#修复vantage表单说明宽度限制（anothaDev/luci-theme-vantage#51）
+FIX "theme-vantage" "$PACKAGE_PATH/luci-theme-vantage" sed -i \
+	-e '/^\.cbi-map-descr {/,/^}/ { /max-width: 76ch;/d; }' \
+	-e 's/^\(\.cbi-section-descr { \)max-width: 80ch; /\1/' \
+	-e '/^\.cbi-value-description {/,/^}/ { /max-width: 70ch;/d; }' \
+	"$PACKAGE_PATH/luci-theme-vantage/luci-theme-vantage/htdocs/luci-static/vantage/vantage.css"
 
 #修改mini-diskmanager菜单位置
 FIX "mini-diskmanager" "$PACKAGE_PATH/luci-app-mini-diskmanager" sed -i "s/services/system/g" \
